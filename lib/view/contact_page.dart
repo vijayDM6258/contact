@@ -115,18 +115,19 @@ class _ContactPageState extends State<ContactPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          LocalAuthentication authentication = LocalAuthentication();
-          if (await authentication.isDeviceSupported()) {
-            print("isDeviceSupported");
-            bool isAuth = await authentication.authenticate(
-                localizedReason: "Please authenticate to add Contact");
-            if (isAuth) {
-              Navigator.pushNamed(context, PageName.addContact);
-            }
-            print("isAuth $isAuth");
-          } else {
-            print("isDeviceSupported false");
-          }
+          Navigator.pushNamed(context, PageName.addContact);
+          // LocalAuthentication authentication = LocalAuthentication();
+          // if (await authentication.isDeviceSupported()) {
+          //   print("isDeviceSupported");
+          //   bool isAuth = await authentication.authenticate(
+          //       localizedReason: "Please authenticate to add Contact");
+          //   if (isAuth) {
+          //     Navigator.pushNamed(context, PageName.addContact);
+          //   }
+          //   print("isAuth $isAuth");
+          // } else {
+          //   print("isDeviceSupported false");
+          // }
         },
       ),
     );
